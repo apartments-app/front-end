@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
-import logo from '../media/placeholder-logo.png'
+import logo from '../media/logo-placeholder.png'
 
 const Landing = () => {
 
@@ -32,19 +32,11 @@ const Landing = () => {
 
     return (
 
-        // all of our stuff right here
-        // logo
-        // app name
         <Wrapper background = "linear-gradient(180deg, #FB99C4 0%, #FFA1BB 26.05%, #FFAD8A 64.71%, #FFD49E 100%)">
             <Logo src={logo}/>
             <Header>Apartmates</Header>
             <Slogan>Find your place and the people to share it with</Slogan>
         </Wrapper>
-        // catchphrase
-
-        // button
-        // button
-        // button
         
     )
 
