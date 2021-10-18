@@ -5,10 +5,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     /* position: relative; */
-    width: 100%;
+    /* width: 375px; */
     text-align: center;
     padding: 25px;
-    background-color: ${props => props.background || "pink"}
+    background: ${props => props.background || "pink"}
 `
 
 export default Wrapper
