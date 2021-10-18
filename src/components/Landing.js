@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
+import Button from './Button';
 import logo from '../media/logo-placeholder.png'
 
 const Landing = () => {
@@ -36,6 +37,9 @@ const Landing = () => {
             <Logo src={logo}/>
             <Header>Apartmates</Header>
             <Slogan>Find your place and the people to share it with</Slogan>
+            <Button>Sign up with Facebook</Button>
+            <Button>Sign up with Email</Button>
+            <Button>Login</Button>
         </Wrapper>
         
     )
