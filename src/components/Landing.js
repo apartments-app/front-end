@@ -28,7 +28,7 @@ const Landing = () => {
         // all of our stuff right here
         // logo
         // app name
-        <MobileWrapper>
+        <>
             <Header>Apartmates</Header>
             <Slogan>Find your place and the people to share it with</Slogan>
         </>
