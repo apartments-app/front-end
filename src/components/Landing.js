@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import Wrapper from './Wrapper';
 
 const Landing = () => {
 
@@ -10,8 +11,7 @@ const Landing = () => {
         font-weight: normal;
         font-size: 56px;
         line-height: 42px;
-        color: black;
-        /* color: #FFFFFF */
+        color: #FFFFFF;
     `
     const Slogan = styled.div`
         font-family: 'Cabin';
@@ -19,6 +19,7 @@ const Landing = () => {
         font-weight: normal;
         font-size: 20px;
         line-height: 24px;
+        color: #FFFFFF;
     `
 
     
@@ -28,10 +29,10 @@ const Landing = () => {
         // all of our stuff right here
         // logo
         // app name
-        <>
+        <Wrapper background = "pink">
             <Header>Apartmates</Header>
             <Slogan>Find your place and the people to share it with</Slogan>
-        </>
+        </Wrapper>
         // catchphrase
 
         // button
