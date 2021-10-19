@@ -11,6 +11,21 @@ const ProfileCreation = () => {
   const [inputs, setInputs] = useState({});
   const [textarea, setTextArea] = useState("");
 
+  const handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  };
+
+  const handleTextChange = (event) => {
+    setTextArea(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs); 
+  };
+
   const BirthdayLabel = styled.label`
     display: block;
     text-align: left;
@@ -76,12 +91,14 @@ const ProfileCreation = () => {
       <InfoText>
       Just fill out your personal info once and it will be shared with every housing application. This info will be visible to other people who join the waitlist so you can find potential apartmate matches. You can edit your info at any time through your profile. 
       </InfoText>
-      <form>
+      <form onSubmit={handleSubmit}>
         <ProfileLabel>
           Full Name
           <InputStyle 
             type="text" 
             name="fullname" 
+            value={inputs.fullname}
+            onChange={handleInputChange}
             placeholder="Type answer here" 
           />
         </ProfileLabel>
@@ -90,24 +107,32 @@ const ProfileCreation = () => {
         </BirthdayLabel>
           <InputDate 
             type="number" 
-            name="date" 
+            name="birthdate"
+            value={inputs.birthdate}
+            onChange={handleInputChange} 
             placeholder="Day" 
           />
           <InputMonth 
             type="text" 
-            name="month" 
+            name="birthmonth"
+            value={inputs.birthmonth}
+            onChange={handleInputChange}  
             placeholder="Month" 
           />
           <InputYear
             type="number" 
-            name="Year" 
+            name="birthyear"
+            value={inputs.birthyear}
+            onChange={handleInputChange}  
             placeholder="Year" 
           />
         <ProfileLabel>
           Phone Number
           <InputStyle
             type="number"
-            name="phoneNumnber"
+            name="phonenumber"
+            value={inputs.phonenumber}
+            onChange={handleInputChange} 
             placeholder="Type answer here"
           />
         </ProfileLabel>
@@ -115,7 +140,9 @@ const ProfileCreation = () => {
           Email
           <InputStyle 
             type="email" 
-            name="email" 
+            name="email"
+            value={inputs.email}
+            onChange={handleInputChange}  
             placeholder="Type answer here" 
           />
         </ProfileLabel>
@@ -125,12 +152,13 @@ const ProfileCreation = () => {
         <ProfileLabel>
           Biography  
           <InputBio
-            value={textarea}            
+            value={textarea}  
+            onChange={handleTextChange}          
             placeholder="Type answer here separated by commas"
           />
         </ProfileLabel>
-        <button>Next</button>
         <button>Back</button>
+        <button>Next</button>
       </form>
     </Container>
   );
