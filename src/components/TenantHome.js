@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
 import InfoGroup from './InfoGrouping/InfoGroup'
+import BottomNav from './Bottom-Nav';
 
 const TenantHome = () => {
     const Header = styled.h1`
@@ -17,6 +18,7 @@ const TenantHome = () => {
             <InfoGroup heading="Schedule" more="view full schedule"/>
             <InfoGroup heading="Tasks" more="read more"/>
             <InfoGroup heading="Recent Activity" more="read more"/>
+            <BottomNav />
         </Wrapper>
     )
 }
