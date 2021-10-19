@@ -5,7 +5,10 @@ import styled from "styled-components";
 import Wrapper from "./Wrapper";
 import Button from "./Button";
 import logo from "../media/logo-placeholder.png";
-import BottomNav from "./Bottom-Nav";
+import BottomNav from "./BottomNav";
+import NewListingHeader from "./NewListing/NewListingHeader";
+import NewListingGeneralInformation from "./NewListing/NewListingGeneralInformation";
+
 const Landing = () => {
   const Header = styled.h1`
     font-family: "Grand Hotel", cursive, sans-serif;
@@ -38,6 +41,12 @@ const Landing = () => {
       <Button>Sign up with Email</Button>
       <Button>Login</Button>
       <BottomNav />
+      <BottomNav canAlternate={true} />
+      <NewListingHeader step={0} />
+      <NewListingHeader step={1} />
+      <NewListingHeader step={2} />
+      <NewListingHeader step={3} />
+      <NewListingGeneralInformation />
     </Wrapper>
   );
 };
