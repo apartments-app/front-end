@@ -64,7 +64,8 @@ const BottomNav = ({ canAlternate = false }) => {
         justifyContent: "center",
         alignItems: "flex-end",
         boxShadow: "0px -2px 4px rgba(0, 0, 0, 0.25)",
-        padding: "15px"
+        padding: "15px",
+        backgroundColor: "#fff",
       }}
     >
       {Object.values(buttons).map((v) => {
