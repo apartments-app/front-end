@@ -13,7 +13,7 @@ const NewListingHeader = ({ step = 0 }) => {
   const Container = styled.div`
     background-color: #fff;
     height: 169px;
-
+    position: relative;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
