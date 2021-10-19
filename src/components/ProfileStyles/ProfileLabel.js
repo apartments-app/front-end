@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ProfileCreation from "../ProfileCreation";
 
 const ProfileLabel = styled.label`
+  display: block;
   text-align: left;
   font-family: "Cabin", sans-serif;
   font-style: normal;
@@ -9,6 +9,6 @@ const ProfileLabel = styled.label`
   font-size: 16px;
   line-height: 24px;
   color: #ff4b96;
-`;
+ `;
 
 export default ProfileLabel; 
