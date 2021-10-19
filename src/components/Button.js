@@ -11,7 +11,7 @@ const MainBtn = styled.button`
   font-size: 1em;
   width: 80%;
   padding: 10px 20px;
-  border: 1px solid;
+  border: 3px solid;
   border-color: #ff4b96;
   border-radius: 20px;
   color: ${(props) => (props.primary ? "#FFF" : "#FF4B96")};
