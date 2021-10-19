@@ -1,7 +1,7 @@
 import './App.css';
 
 import Landing from './components/Landing';
-import TenantHome from './components/TenantHome';
+import TenantHome from './components/Homepage';
 import ProfileCreation from './components/ProfileCreation'; 
 
 function App() {
