@@ -4,7 +4,13 @@ import Wrapper from './Wrapper';
 import InfoGroup from './InfoGrouping/InfoGroup'
 import BottomNav from './Bottom-Nav';
 
+
 const TenantHome = () => {
+
+    const [schedule, setSchedule] = useState([]);
+    const [tasks, setTasks] = useState([]);
+    const [activity, setActivity] = useState([]);
+    
     const Header = styled.h1`
         font-family: 'Grand Hotel', cursive, sans-serif;
         font-style: normal;
