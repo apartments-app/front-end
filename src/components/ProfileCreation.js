@@ -75,6 +75,7 @@ const ProfileCreation = () => {
     birthyear: ""
   })
   const [textarea, setTextArea] = useState("");
+  const [range, setRange] = useState(30)
 
   const handleInputChange = (event) => {
     const name = event.target.name;
@@ -92,6 +93,10 @@ const ProfileCreation = () => {
     setTextArea(event.target.value);
   };
 
+  const handleRangeChange = (event) => {
+    setRange(event.target.value)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs); 
@@ -100,10 +105,13 @@ const ProfileCreation = () => {
   return (
     <Container>
       <HeaderText>Profile Creation</HeaderText>
-      <InfoText>
+      <InfoText style={{marginTop: "2px"}}>
       Just fill out your personal info once and it will be shared with every housing application. This info will be visible to other people who join the waitlist so you can find potential apartmate matches. You can edit your info at any time through your profile. 
       </InfoText>
+
+      {/*FORM*/}
       <form onSubmit={handleSubmit}>
+        {/*Personal Details*/}
         <ProfileLabel>
           Full Name
           <InputStyle 
@@ -158,17 +166,30 @@ const ProfileCreation = () => {
             placeholder="Type answer here" 
           />
         </ProfileLabel>
-        <InfoText>
+
+        {/*Biography*/}
+        <div style={{marginTop: "43px"}} />
+        <InfoText style={{display: "block"}}>
           Tell us a bit about yourself
         </InfoText>
-        <ProfileLabel>
+        <ProfileLabel style={{marginTop: "4px"}}>
           Biography  
           <InputBio
+            name="inpuNBio"
             value={textarea}  
             onChange={handleTextChange}          
             placeholder="Type answer here separated by commas"
           />
         </ProfileLabel>
+
+        {/*Qualities*/}
+        <ProfileLabel style={{marginTop: "13px"}}>
+          Qualities
+          <InfoText style={{display: "block", marginTop: "6px"}}>
+            Drag the slider to indicate how much you identify between these pairs of adjectives. This is just to give a brief overview of how you would prefer to live in a unit. 
+          </InfoText>
+        </ProfileLabel>
+        
         <button>Back</button>
         <button>Next</button>
       </form>
