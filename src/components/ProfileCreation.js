@@ -68,11 +68,18 @@ const InputBio = styled.textarea`
   margin-bottom: 14px; 
 `
 
-const RangeStyle = styled.input`
-  display: "block"
-  width: "100%"
-  marginTop: "50px"
-` 
+const rightLabel = styled.label`
+  display: block;
+  text-align: left;
+  font-family: "Cabin", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px; 
+  line-height: 18px;
+  color: #787878
+  position: absolute;
+  left: 32px;
+`
 
 
 const ProfileCreation = () => {
@@ -83,7 +90,7 @@ const ProfileCreation = () => {
     birthyear: ""
   })
   const [textarea, setTextArea] = useState("");
-  const [range, setRange] = useState(25)
+  const [range, setRange] = useState(30);
 
   const handleInputChange = (event) => {
     const name = event.target.name;
@@ -102,8 +109,10 @@ const ProfileCreation = () => {
   };
 
   const handleRangeChange = (event) => {
-    setRange(event.target.value)
-  }
+    const name = event.target.name;
+    const value = event.target.value;
+    setRange(values => ({...values, [name]: value}))
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -198,16 +207,67 @@ const ProfileCreation = () => {
           </InfoText>
         </ProfileLabel>
 
+        {/* Qualities Slide Selectors */}
         <div>
-        <label style={{alignContent:"left", display:"block"}}>Tidy</label>
-          <input  
-            type="range"
-            name="tidyComfy"
-            min="0" max="110"
-            value={range}
-            onChange={handleRangeChange}
-          />
-        <label style={{alignContent:"right", display:"block"}}>Comfy</label>
+          <label style={{textAlign:"left", display:"block"}}>Tidy</label>
+            <input  
+              type="range"
+              name="tidyComfy"
+              min="0" max="100"
+              value={range.tidyComfy}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Comfy</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Zen</label>
+            <input  
+              type="range"
+              name="zenRowdy"
+              min="0" max="100"
+              value={range.zenRowdy}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Rowdy</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Private</label>
+            <input  
+              type="range"
+              name="privateSocial"
+              min="0" max="100"
+              value={range.privateSocial}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Social</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Homebody</label>
+            <input  
+              type="range"
+              name="homebodyOutgoing"
+              min="0" max="100"
+              value={range.homebodyOutgoing}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Outgoing</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Minimal</label>
+            <input  
+              type="range"
+              name="MinimalCollector"
+              min="0" max="100"
+              value={range.MinimalCollector}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Collector</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Early Bird</label>
+            <input  
+              type="range"
+              name="EarlybirdNightowl"
+              min="0" max="100"
+              value={range.EarlybirdNightowl}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Night Owl</label>
         </div>
         <br /> 
         {/* Buttons */}
