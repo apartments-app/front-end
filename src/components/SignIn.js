@@ -82,7 +82,11 @@ const SignIn = () => {
         <label htmlFor=""></label>
         <input type="text" style={inputStyle} placeholder="username" />
         <label htmlFor=""></label>
-        <input type="password" style={inputStyle} placeholder="password" />
+        <input
+          type="password"
+          style={{ ...inputStyle, "marginTop": "10px" }}
+          placeholder="password"
+        />
         <Button primary style={buttonStyle}>
           Sign In
         </Button>
