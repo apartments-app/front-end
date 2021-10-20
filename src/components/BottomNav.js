@@ -49,10 +49,10 @@ const BottomNav = ({ canAlternate = false }) => {
 
   const buttons = {
     ...buttonPart,
-    inbox: { src: "/media/inbox.svg", alt: "wait-lists icon", label: "Inbox" },
+    inbox: { src: "/media/inbox.svg", alt: "inbox icon", label: "Inbox" },
     profile: {
       src: "/media/profile.svg",
-      alt: "wait-lists icon",
+      alt: "profile icon",
       label: "Profile",
     },
   };
@@ -64,12 +64,13 @@ const BottomNav = ({ canAlternate = false }) => {
         justifyContent: "center",
         alignItems: "flex-end",
         boxShadow: "0px -2px 4px rgba(0, 0, 0, 0.25)",
-        padding: "15px"
+        padding: "15px",
+        backgroundColor: "#fff",
       }}
     >
       {Object.values(buttons).map((v) => {
         return (
-          <Button>
+          <Button key={v.alt}>
             <img src={v.src} alt={v.alt} />
             {v.label}
           </Button>

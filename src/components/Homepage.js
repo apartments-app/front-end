@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
 import InfoGroup from './InfoGrouping/InfoGroup'
-import BottomNav from './Bottom-Nav';
+import BottomNav from './BottomNav';
 
 const fakeSchedule = {
     1423: {"what": "Room Tour",
