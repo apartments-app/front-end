@@ -1,32 +1,15 @@
 import { useState } from "react";
-
 import styled from "styled-components";
+
 import Container from "./ProfileStyles/Container";
 import HeaderText from "./ProfileStyles/HeaderText";
 import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
+import BottomNav from "./BottomNav";
+import "./ProfileStyles/InputRange.css"
 
-const ProfileCreation = () => {
-  const [inputs, setInputs] = useState({});
-  const [textarea, setTextArea] = useState("");
-
-  const handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  };
-
-  const handleTextChange = (event) => {
-    setTextArea(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs); 
-  };
-
-  const BirthdayLabel = styled.label`
+const BirthdayLabel = styled.label`
     display: block;
     text-align: left;
     font-family: "Cabin", sans-serif;
@@ -38,60 +21,114 @@ const ProfileCreation = () => {
     padding: 0 0 0px 0; 
  `;
 
-  const InputDate = styled.input`
-    width: 21%;
-    height: 37px;
-    background: #FFFFFF; 
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px;
-    margin-right: 11px;     
-  `;
+const InputDate = styled.input`
+  width: 21%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  margin-right: 11px;     
+`;
 
-  const InputMonth = styled.input`
-    width: 38.5%;
-    height: 37px;
-    background: #FFFFFF; 
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px;
-    margin-right: 11px;
-  `;
+const InputMonth = styled.input`
+  width: 35%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  margin-right: 11px;
+`;
 
-  const InputYear = styled.input`
-    width: 32.8%;
-    height: 37px;
-    background: #FFFFFF; 
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px;
-  `;
+const InputYear = styled.input`
+  width: 32%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+`;
 
-  const InputBio = styled.textarea`
-    display: block;
-    width: 100%;
-    height: 101px;
-    background: #FFFFFF;
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px; 
-  `
+const InputBio = styled.textarea`
+  display: block;
+  width: 100%;
+  height: 101px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px; 
+`
 
+const rightLabel = styled.label`
+  display: block;
+  text-align: left;
+  font-family: "Cabin", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px; 
+  line-height: 18px;
+  color: #787878;
+  position: absolute;
+  left: 32px;
+`
+
+
+const ProfileCreation = () => {
+  const [inputs, setInputs] = useState({});
+  const [bday, setBday] = useState({
+    birthday: "",
+    birthmonth: "",
+    birthyear: ""
+  })
+  const [textarea, setTextArea] = useState("");
+  const [range, setRange] = useState(30);
+
+  const handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  };
+
+  const handleBirthdayChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setBday(values => ({...values, [name]: value}))
+  };
+
+  const handleTextChange = (event) => {
+    setTextArea(event.target.value);
+  };
+
+  const handleRangeChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setRange(values => ({...values, [name]: value}))
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs); 
+  };
+ 
   return (
     <Container>
       <HeaderText>Profile Creation</HeaderText>
-      <InfoText>
+      <InfoText style={{marginTop: "2px"}}>
       Just fill out your personal info once and it will be shared with every housing application. This info will be visible to other people who join the waitlist so you can find potential apartmate matches. You can edit your info at any time through your profile. 
       </InfoText>
+
+      {/* Form */}
       <form onSubmit={handleSubmit}>
+        {/* Personal Details */}
         <ProfileLabel>
           Full Name
           <InputStyle 
@@ -106,24 +143,24 @@ const ProfileCreation = () => {
           Birth Date
         </BirthdayLabel>
           <InputDate 
-            type="number" 
-            name="birthdate"
-            value={inputs.birthdate}
-            onChange={handleInputChange} 
+            type="text"
+            name="birthday"
+            value={bday.birthday}
+            onChange={handleBirthdayChange} 
             placeholder="Day" 
           />
           <InputMonth 
-            type="text" 
+            type="text"
             name="birthmonth"
-            value={inputs.birthmonth}
-            onChange={handleInputChange}  
+            value={bday.birthmonth}
+            onChange={handleBirthdayChange}  
             placeholder="Month" 
           />
           <InputYear
-            type="number" 
+            type="text" 
             name="birthyear"
-            value={inputs.birthyear}
-            onChange={handleInputChange}  
+            value={bday.birthyear}
+            onChange={handleBirthdayChange}  
             placeholder="Year" 
           />
         <ProfileLabel>
@@ -146,20 +183,99 @@ const ProfileCreation = () => {
             placeholder="Type answer here" 
           />
         </ProfileLabel>
-        <InfoText>
+
+        {/* Biography */}
+        <div style={{marginTop: "43px"}} />
+        <InfoText style={{display: "block"}}>
           Tell us a bit about yourself
         </InfoText>
-        <ProfileLabel>
+        <ProfileLabel style={{marginTop: "4px"}}>
           Biography  
           <InputBio
+            name="inpuNBio"
             value={textarea}  
             onChange={handleTextChange}          
             placeholder="Type answer here separated by commas"
           />
         </ProfileLabel>
+
+        {/* Qualities */}
+        <ProfileLabel style={{marginTop: "13px"}}>
+          Qualities
+          <InfoText style={{display: "block", marginTop: "6px", marginBottom: "35px"}}>
+            Drag the slider to indicate how much you identify between these pairs of adjectives. This is just to give a brief overview of how you would prefer to live in a unit. 
+          </InfoText>
+        </ProfileLabel>
+
+        {/* Qualities Slide Selectors */}
+        <div>
+          <label style={{textAlign:"left", display:"block"}}>Tidy</label>
+            <input  
+              type="range"
+              name="tidyComfy"
+              min="0" max="100"
+              value={range.tidyComfy}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Comfy</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Zen</label>
+            <input  
+              type="range"
+              name="zenRowdy"
+              min="0" max="100"
+              value={range.zenRowdy}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Rowdy</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Private</label>
+            <input  
+              type="range"
+              name="privateSocial"
+              min="0" max="100"
+              value={range.privateSocial}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Social</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Homebody</label>
+            <input  
+              type="range"
+              name="homebodyOutgoing"
+              min="0" max="100"
+              value={range.homebodyOutgoing}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Outgoing</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Minimal</label>
+            <input  
+              type="range"
+              name="MinimalCollector"
+              min="0" max="100"
+              value={range.MinimalCollector}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Collector</label>
+
+          <label style={{textAlign:"left", display:"block"}}>Early Bird</label>
+            <input  
+              type="range"
+              name="EarlybirdNightowl"
+              min="0" max="100"
+              value={range.EarlybirdNightowl}
+              onChange={handleRangeChange}
+            />
+          <label style={{textAlign:"right", display:"block"}}>Night Owl</label>
+        </div>
+        <br /> 
+        {/* Buttons */}
         <button>Back</button>
         <button>Next</button>
       </form>
+      <br /> 
+      <BottomNav /> 
     </Container>
   );
 };

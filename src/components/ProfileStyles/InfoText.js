@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const InfoText = styled.h2`
-  display: inline-block;
   text-align: left;
   font-family: "Cabin", sans-serif;
   font-style: normal;
