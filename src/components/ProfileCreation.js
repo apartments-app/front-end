@@ -7,26 +7,7 @@ import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
 
-const ProfileCreation = () => {
-  const [inputs, setInputs] = useState({});
-  const [textarea, setTextArea] = useState("");
-
-  const handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
-  };
-
-  const handleTextChange = (event) => {
-    setTextArea(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs); 
-  };
-
-  const BirthdayLabel = styled.label`
+const BirthdayLabel = styled.label`
     display: block;
     text-align: left;
     font-family: "Cabin", sans-serif;
@@ -38,53 +19,83 @@ const ProfileCreation = () => {
     padding: 0 0 0px 0; 
  `;
 
-  const InputDate = styled.input`
-    width: 21%;
-    height: 37px;
-    background: #FFFFFF; 
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px;
-    margin-right: 11px;     
-  `;
+const InputDate = styled.input`
+  width: 21%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  margin-right: 11px;     
+`;
 
-  const InputMonth = styled.input`
-    width: 38.5%;
-    height: 37px;
-    background: #FFFFFF; 
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px;
-    margin-right: 11px;
-  `;
+const InputMonth = styled.input`
+  width: 35%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  margin-right: 11px;
+`;
 
-  const InputYear = styled.input`
-    width: 32.8%;
-    height: 37px;
-    background: #FFFFFF; 
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px;
-  `;
+const InputYear = styled.input`
+  width: 32%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+`;
 
-  const InputBio = styled.textarea`
-    display: block;
-    width: 100%;
-    height: 101px;
-    background: #FFFFFF;
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 1px solid #F4F4F4;
-    margin-top: 5px;
-    margin-bottom: 14px; 
-  `
+const InputBio = styled.textarea`
+  display: block;
+  width: 100%;
+  height: 101px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px; 
+`
 
+const ProfileCreation = () => {
+  const [inputs, setInputs] = useState({});
+  const [bday, setBday] = useState({
+    birthday: "",
+    birthmonth: "",
+    birthyear: ""
+  })
+  const [textarea, setTextArea] = useState("");
+
+  const handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  };
+
+  const handleBirthdayChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setBday(values => ({...values, [name]: value}))
+  };
+
+  const handleTextChange = (event) => {
+    setTextArea(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs); 
+  };
+ 
   return (
     <Container>
       <HeaderText>Profile Creation</HeaderText>
@@ -106,24 +117,24 @@ const ProfileCreation = () => {
           Birth Date
         </BirthdayLabel>
           <InputDate 
-            type="number" 
-            name="birthdate"
-            value={inputs.birthdate}
-            onChange={handleInputChange} 
+            type="text"
+            name="birthday"
+            value={bday.birthday}
+            onChange={handleBirthdayChange} 
             placeholder="Day" 
           />
           <InputMonth 
-            type="text" 
+            type="text"
             name="birthmonth"
-            value={inputs.birthmonth}
-            onChange={handleInputChange}  
+            value={bday.birthmonth}
+            onChange={handleBirthdayChange}  
             placeholder="Month" 
           />
           <InputYear
-            type="number" 
+            type="text" 
             name="birthyear"
-            value={inputs.birthyear}
-            onChange={handleInputChange}  
+            value={bday.birthyear}
+            onChange={handleBirthdayChange}  
             placeholder="Year" 
           />
         <ProfileLabel>
