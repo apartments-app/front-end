@@ -7,6 +7,7 @@ import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
 import BottomNav from "./Bottom-Nav";
+import "./ProfileStyles/InputRange.css"
 
 const BirthdayLabel = styled.label`
     display: block;
@@ -67,6 +68,13 @@ const InputBio = styled.textarea`
   margin-bottom: 14px; 
 `
 
+const RangeStyle = styled.input`
+  display: "block"
+  width: "100%"
+  marginTop: "50px"
+` 
+
+
 const ProfileCreation = () => {
   const [inputs, setInputs] = useState({});
   const [bday, setBday] = useState({
@@ -75,7 +83,7 @@ const ProfileCreation = () => {
     birthyear: ""
   })
   const [textarea, setTextArea] = useState("");
-  const [range, setRange] = useState(30)
+  const [range, setRange] = useState(25)
 
   const handleInputChange = (event) => {
     const name = event.target.name;
@@ -109,9 +117,9 @@ const ProfileCreation = () => {
       Just fill out your personal info once and it will be shared with every housing application. This info will be visible to other people who join the waitlist so you can find potential apartmate matches. You can edit your info at any time through your profile. 
       </InfoText>
 
-      {/*FORM*/}
+      {/* Form */}
       <form onSubmit={handleSubmit}>
-        {/*Personal Details*/}
+        {/* Personal Details */}
         <ProfileLabel>
           Full Name
           <InputStyle 
@@ -167,7 +175,7 @@ const ProfileCreation = () => {
           />
         </ProfileLabel>
 
-        {/*Biography*/}
+        {/* Biography */}
         <div style={{marginTop: "43px"}} />
         <InfoText style={{display: "block"}}>
           Tell us a bit about yourself
@@ -182,14 +190,27 @@ const ProfileCreation = () => {
           />
         </ProfileLabel>
 
-        {/*Qualities*/}
+        {/* Qualities */}
         <ProfileLabel style={{marginTop: "13px"}}>
           Qualities
-          <InfoText style={{display: "block", marginTop: "6px"}}>
+          <InfoText style={{display: "block", marginTop: "6px", marginBottom: "35px"}}>
             Drag the slider to indicate how much you identify between these pairs of adjectives. This is just to give a brief overview of how you would prefer to live in a unit. 
           </InfoText>
         </ProfileLabel>
-        
+
+        <div>
+        <label style={{alignContent:"left", display:"block"}}>Tidy</label>
+          <input  
+            type="range"
+            name="tidyComfy"
+            min="0" max="110"
+            value={range}
+            onChange={handleRangeChange}
+          />
+        <label style={{alignContent:"right", display:"block"}}>Comfy</label>
+        </div>
+        <br /> 
+        {/* Buttons */}
         <button>Back</button>
         <button>Next</button>
       </form>
