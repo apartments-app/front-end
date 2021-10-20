@@ -1,11 +1,12 @@
 import { useState } from "react";
-
 import styled from "styled-components";
+
 import Container from "./ProfileStyles/Container";
 import HeaderText from "./ProfileStyles/HeaderText";
 import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
+import BottomNav from "./Bottom-Nav";
 
 const BirthdayLabel = styled.label`
     display: block;
@@ -171,6 +172,8 @@ const ProfileCreation = () => {
         <button>Back</button>
         <button>Next</button>
       </form>
+      <br /> 
+      <BottomNav /> 
     </Container>
   );
 };
