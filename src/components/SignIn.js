@@ -4,7 +4,7 @@ import logo from "../media/logo.png";
 import Button from "./Button";
 
 const Logo = styled.img`
-  width: 25%;
+  width: 77px;
   filter: brightness(0%) invert(1);
   margin-top: 100px;
 `;
@@ -62,12 +62,12 @@ const buttonStyle = {
 
 const inputStyle = {
   "boxSizing": "borderBox",
-  "width": "100%",
   "fontSize": "1em",
   "padding": "10px 20px",
   "border": "1px solid",
   "borderColor": "#ff4b96",
   "borderRadius": "10px",
+  "alignSelf": "stretch",
 };
 
 const SignIn = () => {
