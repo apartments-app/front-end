@@ -40,7 +40,7 @@ const Landing = () => {
       <Slogan>Find your place and the people to share it with</Slogan>
       <Button>Sign up with Facebook</Button>
       <Button>Sign up with Email</Button>
-      <Link to="/SignIn">
+      <Link to="/signin">
         <Button>Login</Button>
       </Link>
 

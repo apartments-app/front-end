@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/SignIn" component={SignIn} />
+        <Route path="/signin" component={SignIn} />
         <Route path="/Home" component={Homepage} />
         <Route path="/Listings" component={SignUpListings} />
         <Route path="/Profile" component={ProfileCreation} />
