@@ -9,9 +9,9 @@ const NewListingInputSplitPanel = ({
     display: ${showPanel ? "block" : "none"};
     position: absolute;
     top: 100%;
-    right: -3px;
-
-    width: ${isState ? "102px" : "311px"};
+    right: 0;
+    z-index: 9999;
+    width: 100%;
     background: #ffffff;
     border: 3px solid #ff4b96;
     box-sizing: border-box;

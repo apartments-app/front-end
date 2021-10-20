@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, Link } from "react-router-dom";
 
-import styled from 'styled-components';
-import Wrapper from './Wrapper';
-import Button from './Button';
-import logo from '../media/logo.png'
+import styled from "styled-components";
+import Wrapper from "./Wrapper";
+import Button from "./Button";
+import logo from "../media/logo.png";
 import BottomNav from "./BottomNav";
 import NewListingHeader from "./NewListing/NewListingHeader";
 import NewListingGeneralInformation from "./NewListing/NewListingGeneralInformation";
+import NewListingUnitInformation from "./NewListing/NewListingUnitInformation";
 
 const Landing = () => {
-
   const Header = styled.h1`
     font-family: "Grand Hotel", cursive, sans-serif;
     font-style: normal;
@@ -18,7 +18,6 @@ const Landing = () => {
     font-size: 56px;
     line-height: 42px;
     color: #ffffff;
-
   `;
   const Slogan = styled.div`
     font-family: "Cabin";
@@ -42,17 +41,19 @@ const Landing = () => {
       <Slogan>Find your place and the people to share it with</Slogan>
       <Button>Sign up with Facebook</Button>
       <Button>Sign up with Email</Button>
-      <Link to="/home"><Button>Login</Button></Link>
+      <Link to="/home">
+        <Button>Login</Button>
+      </Link>
 
       {/* <BottomNav />
       <BottomNav canAlternate={true} /> */}
       {/* <NewListingHeader step={0} />
       <NewListingHeader step={1} />
       <NewListingHeader step={2} />
-      <NewListingHeader step={3} />
-      <NewListingGeneralInformation /> */}
+      <NewListingHeader step={3} /> */}
+      {/* <NewListingGeneralInformation /> */}
+      <NewListingUnitInformation />
     </Wrapper>
-
   );
 };
 
