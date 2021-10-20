@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
 import Button from './Button';
-import logo from '../media/logo-placeholder.png'
+import logo from '../media/logo.png'
 
 const Landing = () => {
 
