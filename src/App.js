@@ -10,14 +10,15 @@ import SignIn from "./components/SignIn";
 function App() {
   return (
     <div className="App">
-      {/* test the landing page */}
-      <Landing />
-      {/* test the tenant home */}
-      <TenantHome />
-      {/* test the profile creation */}
-      <ProfileCreation />
-      <SignUpListings />
-      <SignIn />
+      <Switch>
+
+        <Route path = "/Home" component={Homepage}/>
+        <Route path = "/Listings" component={SignUpListings}/>
+        <Route path = "/Profile" component={ProfileCreation}/>
+        <Route exact path="/" component={Landing} />
+
+      </Switch>
+
     </div>
   );
 }
