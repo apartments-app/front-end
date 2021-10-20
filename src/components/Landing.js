@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-// import { useHistory } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from "react";
+import { useHistory, Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import Wrapper from './Wrapper';
@@ -10,6 +10,7 @@ import NewListingHeader from "./NewListing/NewListingHeader";
 import NewListingGeneralInformation from "./NewListing/NewListingGeneralInformation";
 
 const Landing = () => {
+
   const Header = styled.h1`
     font-family: "Grand Hotel", cursive, sans-serif;
     font-style: normal;
@@ -41,14 +42,15 @@ const Landing = () => {
       <Slogan>Find your place and the people to share it with</Slogan>
       <Button>Sign up with Facebook</Button>
       <Button>Sign up with Email</Button>
-      <Button>Login</Button>
-      <BottomNav />
-      <BottomNav canAlternate={true} />
-      <NewListingHeader step={0} />
+      <Link to="/home"><Button>Login</Button></Link>
+
+      {/* <BottomNav />
+      <BottomNav canAlternate={true} /> */}
+      {/* <NewListingHeader step={0} />
       <NewListingHeader step={1} />
       <NewListingHeader step={2} />
       <NewListingHeader step={3} />
-      <NewListingGeneralInformation />
+      <NewListingGeneralInformation /> */}
     </Wrapper>
 
   );
