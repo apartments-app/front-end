@@ -1,7 +1,8 @@
-import "./App.css";
+import  { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
+import { useState, useHistory } from 'react';
 
 import Landing from "./components/Landing";
-import TenantHome from "./components/Homepage";
+import Homepage from "./components/Homepage";
 import ProfileCreation from "./components/ProfileCreation";
 import SignUpListings from "./components/SignUp-Listings";
 
@@ -9,14 +10,14 @@ import SignUpListings from "./components/SignUp-Listings";
 function App() {
   return (
     <div className="App">
+      <Switch>
 
-      {/* test the landing page */}
-      <Landing />
-      {/* test the tenant home */}
-      <TenantHome />
-      {/* test the profile creation */}
-      <ProfileCreation />
-      <SignUpListings />
+        <Route path = "/Home" component={Homepage}/>
+        <Route path = "/Listings" component={SignUpListings}/>
+        <Route path = "/Profile" component={ProfileCreation}/>
+        <Route exact path="/" component={Landing} />
+
+      </Switch>
 
     </div>
   );
