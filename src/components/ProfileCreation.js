@@ -6,7 +6,7 @@ import HeaderText from "./ProfileStyles/HeaderText";
 import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
-import BottomNav from "./Bottom-Nav";
+import BottomNav from "./BottomNav";
 import "./ProfileStyles/InputRange.css"
 
 const BirthdayLabel = styled.label`
@@ -76,7 +76,7 @@ const rightLabel = styled.label`
   font-weight: 400;
   font-size: 16px; 
   line-height: 18px;
-  color: #787878
+  color: #787878;
   position: absolute;
   left: 32px;
 `

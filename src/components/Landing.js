@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import { useHistory } from 'react-router-dom';
 
-
-import styled from "styled-components";
-import Wrapper from "./Wrapper";
-import Button from "./Button";
-import logo from "../media/logo-placeholder.png";
+import styled from 'styled-components';
+import Wrapper from './Wrapper';
+import Button from './Button';
+import logo from '../media/logo.png'
 import BottomNav from "./BottomNav";
 import NewListingHeader from "./NewListing/NewListingHeader";
 import NewListingGeneralInformation from "./NewListing/NewListingGeneralInformation";
