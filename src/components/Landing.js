@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { useHistory } from 'react-router-dom';
 
+
 import styled from "styled-components";
 import Wrapper from "./Wrapper";
 import Button from "./Button";
@@ -17,6 +18,7 @@ const Landing = () => {
     font-size: 56px;
     line-height: 42px;
     color: #ffffff;
+
   `;
   const Slogan = styled.div`
     font-family: "Cabin";
@@ -24,6 +26,7 @@ const Landing = () => {
     font-weight: normal;
     font-size: 20px;
     line-height: 24px;
+
     color: #ffffff;
   `;
 
@@ -48,6 +51,7 @@ const Landing = () => {
       <NewListingHeader step={3} />
       <NewListingGeneralInformation />
     </Wrapper>
+
   );
 };
 
