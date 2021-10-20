@@ -3,6 +3,13 @@ import styled from "styled-components";
 import logo from "../media/logo.png";
 import Button from "./Button";
 
+const LogoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Logo = styled.img`
   width: 77px;
   filter: brightness(0%) invert(1);
@@ -73,11 +80,11 @@ const inputStyle = {
 const SignIn = () => {
   return (
     <Div>
-      <div class="logoWrapper">
+      <LogoWrapper>
         <Logo src={logo} />
         <Header>Apartmates</Header>
         <Slogan>Find your place and the people to share it with</Slogan>
-      </div>
+      </LogoWrapper>
       <Form>
         <label htmlFor=""></label>
         <input type="text" style={inputStyle} placeholder="username" />
