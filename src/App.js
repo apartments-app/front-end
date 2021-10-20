@@ -1,15 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 
 import Landing from './components/Landing';
-import TenantHome from './components/TenantHome';
+import TenantHome from './components/Homepage';
 import ProfileCreation from './components/ProfileCreation'; 
 
 function App() {
   return (
     <div className="App">
+      {/* test the landing page */}
       <Landing/>
+      {/* test the tenant home */}
       <TenantHome/>
+      {/* test the profile creation */}
       <ProfileCreation />
     </div>
   );
