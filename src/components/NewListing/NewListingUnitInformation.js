@@ -69,7 +69,7 @@ const NewListingUnitInformation = () => {
           </NewListingField>
         </NewListingField>
         <NewListingField>
-          <NewListingLabel style={{ marginBottom: "20px" }}>
+          <NewListingLabel style={{ marginBottom: "45px" }}>
             # OF TENANTS ALLOWED
           </NewListingLabel>
           <NewListingDualSlider></NewListingDualSlider>
