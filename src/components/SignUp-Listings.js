@@ -35,6 +35,7 @@ const secondaryButtonStyle = {
   "alignItems": "center",
   "width": "311px",
   "height": "54px",
+  "border": "3px solid",
 };
 
 const Span = styled.span`
