@@ -4,6 +4,8 @@ import { useState, useHistory } from "react";
 import Landing from "./components/Landing";
 import Homepage from "./components/Homepage";
 import ProfileCreation from "./components/ProfileCreation";
+import ProfileScreening from "./components/ProfileScreening";
+import ProfilePage from "./components/ProfilePage";
 import SignUpListings from "./components/SignUp-Listings";
 import SignIn from "./components/SignIn";
 
@@ -15,6 +17,8 @@ function App() {
         <Route path="/Home" component={Homepage} />
         <Route path="/Listings" component={SignUpListings} />
         <Route path="/Profile" component={ProfileCreation} />
+        <Route path="/Screening" component={ProfileScreening} />
+        <Route path="/ProfilePage" component={ProfilePage} />
         <Route exact path="/" component={Landing} />
       </Switch>
     </div>

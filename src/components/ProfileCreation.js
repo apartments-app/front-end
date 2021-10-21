@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Container from "./ProfileStyles/Container";
 import HeaderText from "./ProfileStyles/HeaderText";
@@ -7,10 +8,12 @@ import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
 import BottomNav from "./BottomNav";
-import "./ProfileStyles/InputRange.css"
+import Button from "./Button";
+import BackLink from "./ProfileStyles/BackLink";
+import "./ProfileStyles/InputRange.css";
 
 const BirthdayLabel = styled.label`
-    display: block;
+    display: block; 
     text-align: left;
     font-family: "Cabin", sans-serif;
     font-style: normal;
@@ -192,6 +195,7 @@ const ProfileCreation = () => {
         <ProfileLabel style={{marginTop: "4px"}}>
           Biography  
           <InputBio
+            style={{fontFamily: "Cabin", fontSize: "16px"}}
             name="inpuNBio"
             value={textarea}  
             onChange={handleTextChange}          
@@ -270,9 +274,28 @@ const ProfileCreation = () => {
           <label style={{textAlign:"right", display:"block"}}>Night Owl</label>
         </div>
         <br /> 
+
         {/* Buttons */}
-        <button>Back</button>
-        <button>Next</button>
+        <div 
+          style={{
+            display: "block",
+            width: "100%",
+            textAlign: "right"
+          }}
+        >
+          <BackLink to="/">Back</BackLink>
+          <Link to="/Screening">
+            <Button primary
+              style={{
+                width: "103px",
+                height: "40px",
+                display: "inline-block",
+                fontSize: "20px"
+              }}
+            >Next
+            </Button>
+          </Link>
+        </div>
       </form>
       <br /> 
       <BottomNav /> 
