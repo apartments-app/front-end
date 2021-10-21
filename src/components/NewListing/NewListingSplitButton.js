@@ -3,8 +3,7 @@ import React, { useState } from "react";
 
 import NewListingInputSplitPanel from "./NewListingInputSplitPanel";
 
-const InputSplitButton = styled.div`
-  position: relative;
+const InputSplitButton = styled.div`  
   background: #ff4b96;
   border: 3px solid #ff4b96;
   box-sizing: border-box;
