@@ -195,6 +195,7 @@ const ProfileCreation = () => {
         <ProfileLabel style={{marginTop: "4px"}}>
           Biography  
           <InputBio
+            style={{fontFamily: "Cabin", fontSize: "16px"}}
             name="inpuNBio"
             value={textarea}  
             onChange={handleTextChange}          
