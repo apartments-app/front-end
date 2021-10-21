@@ -119,7 +119,7 @@ const ProfileCreation = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputs); 
+    console.log(inputs);
   };
  
   return (
@@ -196,7 +196,7 @@ const ProfileCreation = () => {
           Biography  
           <InputBio
             style={{fontFamily: "Cabin", fontSize: "16px"}}
-            name="inpuNBio"
+            name="biography"
             value={textarea}  
             onChange={handleTextChange}          
             placeholder="Type answer here separated by commas"
