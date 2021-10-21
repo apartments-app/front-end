@@ -8,6 +8,7 @@ import logo from "../media/logo.png";
 import BottomNav from "./BottomNav";
 import NewListingHeader from "./NewListing/NewListingHeader";
 import NewListingGeneralInformation from "./NewListing/NewListingGeneralInformation";
+import NewListingUnitInformation from "./NewListing/NewListingUnitInformation";
 
 const Landing = () => {
   const Header = styled.h1`
@@ -40,17 +41,18 @@ const Landing = () => {
       <Slogan>Find your place and the people to share it with</Slogan>
       <Button>Sign up with Facebook</Button>
       <Button>Sign up with Email</Button>
-      <Link to="/signin">
+      <Link to="/home">
         <Button>Login</Button>
       </Link>
 
-      {/* <BottomNav />
-      <BottomNav canAlternate={true} /> */}
+      {/* <BottomNav /> */}
+      {/* <BottomNav canAlternate={true} /> */} 
       {/* <NewListingHeader step={0} />
       <NewListingHeader step={1} />
       <NewListingHeader step={2} />
-      <NewListingHeader step={3} />
-      <NewListingGeneralInformation /> */}
+      <NewListingHeader step={3} /> */}
+      {/* <NewListingGeneralInformation /> */}
+      <NewListingUnitInformation />
     </Wrapper>
   );
 };

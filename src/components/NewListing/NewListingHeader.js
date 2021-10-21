@@ -57,14 +57,14 @@ const NewListingHeader = ({ step = 0 }) => {
     background: #787878;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    width: 311px;
+    max-width: 311px;
+    width: 100%;
     height: 16px;
     align-self: center;
   `;
 
-  const maxStep = 4;
   const Status = styled.div`
-    width: ${100 / (maxStep - step)}%;
+    width: ${25 * (step + 1)}%;
     height: 16px;
     background: #ff4b96;
     border-radius: 20px;

@@ -5,6 +5,7 @@ const NewListingField = styled.div`
   flex-direction: column;
   max-width: 311px;
   width: 100%;
+  position: relative;
   align-items: flex-start;
 `;
 

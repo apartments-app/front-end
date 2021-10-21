@@ -19,6 +19,12 @@ const NewListingButton = styled.div`
   align-items: center;
 
   color: #ffffff;
+
+  &:hover {
+    color: #ff4b96;
+    background: #ffffff;
+    cursor: pointer;
+  }
 `;
 
 export default NewListingButton;
