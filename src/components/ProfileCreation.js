@@ -7,10 +7,12 @@ import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
 import InputStyle from "./ProfileStyles/InputStyle";
 import BottomNav from "./BottomNav";
-import "./ProfileStyles/InputRange.css"
+import Button from "./Button";
+import BackLink from "./ProfileStyles/BackLink";
+import "./ProfileStyles/InputRange.css";
 
 const BirthdayLabel = styled.label`
-    display: block;
+    display: block; 
     text-align: left;
     font-family: "Cabin", sans-serif;
     font-style: normal;
@@ -270,9 +272,26 @@ const ProfileCreation = () => {
           <label style={{textAlign:"right", display:"block"}}>Night Owl</label>
         </div>
         <br /> 
+
         {/* Buttons */}
-        <button>Back</button>
-        <button>Next</button>
+        <div 
+          style={{
+            display: "block",
+            width: "100%",
+            textAlign: "right"
+          }}
+        >
+          <BackLink>Back</BackLink>
+          <Button 
+            style={{
+              width: "103px",
+              height: "40px",
+              display: "inline-block",
+              fontSize: "20px"
+            }}
+          >Next
+          </Button>
+        </div>
       </form>
       <br /> 
       <BottomNav /> 
