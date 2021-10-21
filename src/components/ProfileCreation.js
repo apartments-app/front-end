@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Container from "./ProfileStyles/Container";
 import HeaderText from "./ProfileStyles/HeaderText";
@@ -281,16 +282,18 @@ const ProfileCreation = () => {
             textAlign: "right"
           }}
         >
-          <BackLink>Back</BackLink>
-          <Button 
-            style={{
-              width: "103px",
-              height: "40px",
-              display: "inline-block",
-              fontSize: "20px"
-            }}
-          >Next
-          </Button>
+          <BackLink to="/">Back</BackLink>
+          <Link to="/Screening">
+            <Button primary
+              style={{
+                width: "103px",
+                height: "40px",
+                display: "inline-block",
+                fontSize: "20px"
+              }}
+            >Next
+            </Button>
+          </Link>
         </div>
       </form>
       <br /> 
