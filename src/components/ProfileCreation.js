@@ -218,6 +218,7 @@ const ProfileCreation = () => {
               type="range"
               name="tidyComfy"
               min="0" max="100"
+              defaultValue="25"
               value={range.tidyComfy}
               onChange={handleRangeChange}
             />
@@ -228,6 +229,7 @@ const ProfileCreation = () => {
               type="range"
               name="zenRowdy"
               min="0" max="100"
+              defaultValue="25"
               value={range.zenRowdy}
               onChange={handleRangeChange}
             />
@@ -238,6 +240,7 @@ const ProfileCreation = () => {
               type="range"
               name="privateSocial"
               min="0" max="100"
+              defaultValue="25"
               value={range.privateSocial}
               onChange={handleRangeChange}
             />
@@ -248,6 +251,7 @@ const ProfileCreation = () => {
               type="range"
               name="homebodyOutgoing"
               min="0" max="100"
+              defaultValue="25"
               value={range.homebodyOutgoing}
               onChange={handleRangeChange}
             />
@@ -258,6 +262,7 @@ const ProfileCreation = () => {
               type="range"
               name="MinimalCollector"
               min="0" max="100"
+              defaultValue="25"
               value={range.MinimalCollector}
               onChange={handleRangeChange}
             />
@@ -268,6 +273,7 @@ const ProfileCreation = () => {
               type="range"
               name="EarlybirdNightowl"
               min="0" max="100"
+              defaultValue="25"
               value={range.EarlybirdNightowl}
               onChange={handleRangeChange}
             />
