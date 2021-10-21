@@ -45,8 +45,8 @@ const Landing = () => {
         <Button>Login</Button>
       </Link>
 
-      {/* <BottomNav />
-      <BottomNav canAlternate={true} /> */}
+      {/* <BottomNav /> */}
+      {/* <BottomNav canAlternate={true} /> */} 
       {/* <NewListingHeader step={0} />
       <NewListingHeader step={1} />
       <NewListingHeader step={2} />
