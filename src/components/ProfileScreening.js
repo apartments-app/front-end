@@ -139,21 +139,23 @@ const ProfileScreening = () => {
           }}
         >
           <BackLink to="/Profile">Back</BackLink>
-          <Link to="/Screening">
+          <Link to="/ProfilePage">
             <Button 
               primary
               style={{
                 width: "103px",
                 height: "40px",
                 display: "inline-block",
-                fontSize: "20px"
+                fontSize: "20px",
+                marginBottom: "20px"
               }}
             >Submit
             </Button>
           </Link>
         </div>
       </form>
-    <BottomNav /> 
+      <br /> 
+      <BottomNav /> 
     </Container>
   );
 };
