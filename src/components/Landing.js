@@ -41,12 +41,12 @@ const Landing = () => {
       <Slogan>Find your place and the people to share it with</Slogan>
       <Button>Sign up with Facebook</Button>
       <Button>Sign up with Email</Button>
-      <Link to="/home">
+      <Link to="/signin">
         <Button>Login</Button>
       </Link>
 
       {/* <BottomNav /> */}
-      {/* <BottomNav canAlternate={true} /> */} 
+      {/* <BottomNav canAlternate={true} /> */}
       {/* <NewListingHeader step={0} />
       <NewListingHeader step={1} />
       <NewListingHeader step={2} />
