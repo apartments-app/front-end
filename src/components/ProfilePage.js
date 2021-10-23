@@ -4,24 +4,12 @@ import { Link } from "react-router-dom";
 
 import BottomNav from "./BottomNav";
 import Button from "./Button";
-import BackLink from "./ProfileStyles/BackLink";
-import "./ProfileStyles/InputRange.css";
-
+import "./ProfileStyles/InputRangeMini.css";
 import profilePhoto from "../media/profilePhoto.png";
 
-// Qualities
-// sliders - 2 column layout
-
-// Pink Button - Send a Message
-
-// Other Pink Button ??
-
-// Bottom Nav
-
 const sampleProfile = {
+  id: 1,
   fullName: "Jasmine Tran",
-  //photoUrl: "/media/profilePhoto.svg",
-  //photoUrl: "/media/house-sm.svg",
   birthday: "18",
   birthmonth: "January",
   birthyear: "1997",
@@ -32,11 +20,11 @@ const sampleProfile = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
   interests: "Biking, hiking, painting, eating lots of good food",
   tidyComfy: 50,
-  zenRowdy: 50,
-  privateSocial: 50,
-  homebodyOutgoing: 50,
-  MinimalCollector: 50,
-  EarlybirdNightowl: 50,
+  zenRowdy: 30,
+  privateSocial: 75,
+  homebodyOutgoing: 20,
+  minimalCollector: 40,
+  earlybirdNightowl: 30,
   bankruptcyPetition: false,
   evictionNotice: false,
   paymentRefusal: false,
@@ -122,6 +110,38 @@ const ProfileTextSmall = styled.p`
   color: #000000;
 `;
 
+const SliderSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  align-items: flex-start;
+  margin-bottom: 25px;
+`;
+
+const SliderInput = styled.input`
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+`;
+
+const SliderLabelDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+const SliderLabel = styled.label`
+  font-family: Cabin;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #787878;
+  flex-direction: row;
+  margin-top: 5px;
+`;
+
 const ProfilePage = () => {
   return (
     <Container>
@@ -153,11 +173,105 @@ const ProfilePage = () => {
         <ProfileTextSmall>{sampleProfile.interests}</ProfileTextSmall>
       </SectionMiddle>
 
-      <SectionMiddle>
+      <SectionMiddle style={{ marginBottom: "50px" }}>
         <ProfilePageLabel>Qualities</ProfilePageLabel>
       </SectionMiddle>
 
-      <Section style={{justifyContent: "center", marginTop: "26px"}}>
+      <SliderSection style={{ flexDirection: "row", marginTop: "15px" }}>
+        <SliderSection style={{ marginRight: "29.81px" }}>
+          <SliderInput
+            type="range"
+            name="tidyComfy"
+            min="0"
+            max="100"
+            value={sampleProfile.tidyComfy}
+          />
+          <SliderLabelDiv>
+            <SliderLabel>Tidy</SliderLabel>
+            <SliderLabel>Comfy</SliderLabel>
+          </SliderLabelDiv>
+        </SliderSection>
+
+        <SliderSection>
+          <SliderInput
+            type="range"
+            name="zenRowdy"
+            min="0"
+            max="100"
+            value={sampleProfile.zenRowdy}
+          />
+          <SliderLabelDiv>
+            <SliderLabel>Zen</SliderLabel>
+            <SliderLabel>Rowdy</SliderLabel>
+          </SliderLabelDiv>
+        </SliderSection>
+      </SliderSection>
+
+      <SliderSection style={{ flexDirection: "row", marginTop: "15px" }}>
+        <SliderSection style={{ marginRight: "29.81px" }}>
+          <SliderInput
+            type="range"
+            name="privateSocial"
+            min="0"
+            max="100"
+            value={sampleProfile.privateSocial}
+          />
+          <SliderLabelDiv>
+            <SliderLabel>Private</SliderLabel>
+            <SliderLabel>Social</SliderLabel>
+          </SliderLabelDiv>
+        </SliderSection>
+
+        <SliderSection>
+          <SliderInput
+            type="range"
+            name="homebodyOutgoing"
+            min="0"
+            max="100"
+            value={sampleProfile.homebodyOutgoing}
+          />
+          <SliderLabelDiv>
+            <SliderLabel>Homebody</SliderLabel>
+            <SliderLabel>Outgoing</SliderLabel>
+          </SliderLabelDiv>
+        </SliderSection>
+      </SliderSection>
+
+      <SliderSection style={{ flexDirection: "row", marginTop: "15px" }}>
+        <SliderSection style={{ marginRight: "29.81px" }}>
+          <SliderInput
+            type="range"
+            name="minimalCollector"
+            min="0"
+            max="100"
+            value={sampleProfile.minimalCollector}
+          />
+          <SliderLabelDiv>
+            <SliderLabel>Minimal</SliderLabel>
+            <SliderLabel>Collector</SliderLabel>
+          </SliderLabelDiv>
+        </SliderSection>
+
+        <SliderSection>
+          <SliderInput
+            type="range"
+            name="earlybirdNightowl"
+            min="0"
+            max="100"
+            value={sampleProfile.earlybirdNightowl}
+          />
+          <SliderLabelDiv>
+            <SliderLabel>Early Bird</SliderLabel>
+            <SliderLabel>Night Owl</SliderLabel>
+          </SliderLabelDiv>
+        </SliderSection>
+      </SliderSection>
+
+      <Section style={{ 
+        justifyContent: "center", 
+        marginTop: "-30px", 
+        marginBottom: "20px"
+      }}>
         <Button
           primary
           style={{
@@ -165,7 +279,7 @@ const ProfilePage = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "54px",
-            fontSize: "20px"
+            fontSize: "20px",
           }}
         >
           Send Message
