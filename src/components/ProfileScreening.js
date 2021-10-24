@@ -22,6 +22,7 @@ const InputSelectStyle = styled.select`
   margin-top: 10px;
   margin-bottom: 29px; 
   margin-left: -4px;
+  padding-left: 10px;
   
   font-family: "Cabin", sans-serif;
   font-style: normal;
@@ -111,7 +112,11 @@ const ProfileScreening = () => {
         <ProfileLabel style={{marginTop: "26px"}}>
           Do you have any pets or children? If so, how many?
           <InputStyle
-            style={{marginLeft: "-4px", marginRight: "2px"}}
+            style={{
+              marginLeft: "-4px", 
+              marginRight: "50px",
+              paddingLeft: "10px"
+            }}
             type="text"
             name="petsChildren"
             value={inputs.petsChildren}
@@ -143,10 +148,11 @@ const ProfileScreening = () => {
             <Button 
               primary
               style={{
+                fontSize: "18px",
                 width: "103px",
                 height: "40px",
                 display: "inline-block",
-                fontSize: "20px",
+                
                 marginBottom: "20px"
               }}
             >Submit
