@@ -15,7 +15,7 @@ import "./ProfileStyles/InputRange.css";
 const BirthdayLabel = styled.label`
     display: block; 
     text-align: left;
-    font-family: "Cabin", sans-serif;
+    font-family: Cabin, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -25,19 +25,7 @@ const BirthdayLabel = styled.label`
  `;
 
 const InputDate = styled.input`
-  width: 21%;
-  height: 37px;
-  background: #FFFFFF; 
-  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  border: 1px solid #F4F4F4;
-  margin-top: 5px;
-  margin-bottom: 14px;
-  margin-right: 11px;     
-`;
-
-const InputMonth = styled.input`
-  width: 35%;
+  width: 17.6%;
   height: 37px;
   background: #FFFFFF; 
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -46,10 +34,18 @@ const InputMonth = styled.input`
   margin-top: 5px;
   margin-bottom: 14px;
   margin-right: 11px;
+  
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
 `;
 
-const InputYear = styled.input`
-  width: 32%;
+const InputMonth = styled.input`
+  width: 32.8%;
   height: 37px;
   background: #FFFFFF; 
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -57,6 +53,34 @@ const InputYear = styled.input`
   border: 1px solid #F4F4F4;
   margin-top: 5px;
   margin-bottom: 14px;
+  margin-right: 11px;
+
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+`;
+
+const InputYear = styled.input`
+  width: 27.47%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
 `;
 
 const InputBio = styled.textarea`
@@ -68,7 +92,16 @@ const InputBio = styled.textarea`
   border-radius: 10px;
   border: 1px solid #F4F4F4;
   margin-top: 5px;
-  margin-bottom: 14px; 
+  margin-bottom: 14px;
+  padding-left: 13px;
+  
+  font-family: Cabin;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 13px;
+  padding-top: 5px; 
 `
 
 const ProfileCreation = () => {
@@ -181,7 +214,7 @@ const ProfileCreation = () => {
         <ProfileLabel style={{marginTop: "4px"}}>
           Biography  
           <InputBio
-            style={{fontFamily: "Cabin", fontSize: "16px"}}
+            
             name="biography"
             value={textarea}  
             onChange={handleTextChange}          
