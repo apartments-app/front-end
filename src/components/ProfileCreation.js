@@ -71,20 +71,6 @@ const InputBio = styled.textarea`
   margin-bottom: 14px; 
 `
 
-const rightLabel = styled.label`
-  display: block;
-  text-align: left;
-  font-family: "Cabin", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px; 
-  line-height: 18px;
-  color: #787878;
-  position: absolute;
-  left: 32px;
-`
-
-
 const ProfileCreation = () => {
   const [inputs, setInputs] = useState({});
   const [bday, setBday] = useState({
@@ -203,84 +189,6 @@ const ProfileCreation = () => {
           />
         </ProfileLabel>
 
-        {/* Qualities */}
-        <ProfileLabel style={{marginTop: "13px"}}>
-          Qualities
-          <InfoText style={{display: "block", marginTop: "6px", marginBottom: "35px"}}>
-            Drag the slider to indicate how much you identify between these pairs of adjectives. This is just to give a brief overview of how you would prefer to live in a unit. 
-          </InfoText>
-        </ProfileLabel>
-
-        {/* Qualities Slide Selectors */}
-        <div>
-          <label style={{textAlign:"left", display:"block"}}>Tidy</label>
-            <input  
-              type="range"
-              name="tidyComfy"
-              min="0" max="100"
-              defaultValue="25"
-              value={range.tidyComfy}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Comfy</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Zen</label>
-            <input  
-              type="range"
-              name="zenRowdy"
-              min="0" max="100"
-              defaultValue="25"
-              value={range.zenRowdy}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Rowdy</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Private</label>
-            <input  
-              type="range"
-              name="privateSocial"
-              min="0" max="100"
-              defaultValue="25"
-              value={range.privateSocial}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Social</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Homebody</label>
-            <input  
-              type="range"
-              name="homebodyOutgoing"
-              min="0" max="100"
-              defaultValue="25"
-              value={range.homebodyOutgoing}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Outgoing</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Minimal</label>
-            <input  
-              type="range"
-              name="MinimalCollector"
-              min="0" max="100"
-              defaultValue="25"
-              value={range.MinimalCollector}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Collector</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Early Bird</label>
-            <input  
-              type="range"
-              name="EarlybirdNightowl"
-              min="0" max="100"
-              defaultValue="25"
-              value={range.EarlybirdNightowl}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Night Owl</label>
-        </div>
-        <br /> 
-
         {/* Buttons */}
         <div 
           style={{
@@ -296,7 +204,7 @@ const ProfileCreation = () => {
                 width: "103px",
                 height: "40px",
                 display: "inline-block",
-                fontSize: "20px"
+                fontSize: "18px"
               }}
             >Next
             </Button>
