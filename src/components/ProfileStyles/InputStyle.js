@@ -11,12 +11,13 @@ const InputStyle = styled.input`
   margin-top: 5px;
   margin-bottom: 14px; 
   padding-left: 13px;
+
   line-height: 24px;
-  font-family: "Cabin", sans-serif;
+  font-family: Cabin, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  color: #787878; 
+  color: #C4C4C4; 
 `
 
 export default InputStyle;
