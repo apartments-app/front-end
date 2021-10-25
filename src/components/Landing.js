@@ -9,6 +9,7 @@ import BottomNav from "./BottomNav";
 import NewListingHeader from "./NewListing/NewListingHeader";
 import NewListingGeneralInformation from "./NewListing/NewListingGeneralInformation";
 import NewListingUnitInformation from "./NewListing/NewListingUnitInformation";
+import NewListingPhotos from "./NewListing/NewListingPhotos";
 
 const Landing = () => {
   const Header = styled.h1`
@@ -46,13 +47,14 @@ const Landing = () => {
       </Link>
 
       {/* <BottomNav /> */}
-      {/* <BottomNav canAlternate={true} /> */} 
+      {/* <BottomNav canAlternate={true} /> */}
       {/* <NewListingHeader step={0} />
       <NewListingHeader step={1} />
       <NewListingHeader step={2} />
       <NewListingHeader step={3} /> */}
       {/* <NewListingGeneralInformation /> */}
-      <NewListingUnitInformation />
+      {/* <NewListingUnitInformation /> */}
+      <NewListingPhotos />
     </Wrapper>
   );
 };
