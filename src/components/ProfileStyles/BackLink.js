@@ -5,7 +5,7 @@ const BackLink = styled(Link)`
   font-family: "Cabin", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 24px;
   text-decoration-Line: underline;
   color: #787878;

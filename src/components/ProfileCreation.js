@@ -15,7 +15,7 @@ import "./ProfileStyles/InputRange.css";
 const BirthdayLabel = styled.label`
     display: block; 
     text-align: left;
-    font-family: "Cabin", sans-serif;
+    font-family: Cabin, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -25,19 +25,7 @@ const BirthdayLabel = styled.label`
  `;
 
 const InputDate = styled.input`
-  width: 21%;
-  height: 37px;
-  background: #FFFFFF; 
-  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  border: 1px solid #F4F4F4;
-  margin-top: 5px;
-  margin-bottom: 14px;
-  margin-right: 11px;     
-`;
-
-const InputMonth = styled.input`
-  width: 35%;
+  width: 17.6%;
   height: 37px;
   background: #FFFFFF; 
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -46,10 +34,18 @@ const InputMonth = styled.input`
   margin-top: 5px;
   margin-bottom: 14px;
   margin-right: 11px;
+  
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
 `;
 
-const InputYear = styled.input`
-  width: 32%;
+const InputMonth = styled.input`
+  width: 32.8%;
   height: 37px;
   background: #FFFFFF; 
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
@@ -57,6 +53,34 @@ const InputYear = styled.input`
   border: 1px solid #F4F4F4;
   margin-top: 5px;
   margin-bottom: 14px;
+  margin-right: 11px;
+
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
+`;
+
+const InputYear = styled.input`
+  width: 27.47%;
+  height: 37px;
+  background: #FFFFFF; 
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 1px solid #F4F4F4;
+  margin-top: 5px;
+  margin-bottom: 14px;
+
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #787878;
 `;
 
 const InputBio = styled.textarea`
@@ -68,22 +92,17 @@ const InputBio = styled.textarea`
   border-radius: 10px;
   border: 1px solid #F4F4F4;
   margin-top: 5px;
-  margin-bottom: 14px; 
-`
-
-const rightLabel = styled.label`
-  display: block;
-  text-align: left;
-  font-family: "Cabin", sans-serif;
+  margin-bottom: 14px;
+  padding-left: 13px;
+  
+  font-family: Cabin;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px; 
-  line-height: 18px;
-  color: #787878;
-  position: absolute;
-  left: 32px;
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 13px;
+  padding-top: 5px; 
 `
-
 
 const ProfileCreation = () => {
   const [inputs, setInputs] = useState({});
@@ -119,7 +138,7 @@ const ProfileCreation = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputs); 
+    console.log(inputs);
   };
  
   return (
@@ -195,85 +214,13 @@ const ProfileCreation = () => {
         <ProfileLabel style={{marginTop: "4px"}}>
           Biography  
           <InputBio
-            style={{fontFamily: "Cabin", fontSize: "16px"}}
-            name="inpuNBio"
+            
+            name="biography"
             value={textarea}  
             onChange={handleTextChange}          
             placeholder="Type answer here separated by commas"
           />
         </ProfileLabel>
-
-        {/* Qualities */}
-        <ProfileLabel style={{marginTop: "13px"}}>
-          Qualities
-          <InfoText style={{display: "block", marginTop: "6px", marginBottom: "35px"}}>
-            Drag the slider to indicate how much you identify between these pairs of adjectives. This is just to give a brief overview of how you would prefer to live in a unit. 
-          </InfoText>
-        </ProfileLabel>
-
-        {/* Qualities Slide Selectors */}
-        <div>
-          <label style={{textAlign:"left", display:"block"}}>Tidy</label>
-            <input  
-              type="range"
-              name="tidyComfy"
-              min="0" max="100"
-              value={range.tidyComfy}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Comfy</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Zen</label>
-            <input  
-              type="range"
-              name="zenRowdy"
-              min="0" max="100"
-              value={range.zenRowdy}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Rowdy</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Private</label>
-            <input  
-              type="range"
-              name="privateSocial"
-              min="0" max="100"
-              value={range.privateSocial}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Social</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Homebody</label>
-            <input  
-              type="range"
-              name="homebodyOutgoing"
-              min="0" max="100"
-              value={range.homebodyOutgoing}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Outgoing</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Minimal</label>
-            <input  
-              type="range"
-              name="MinimalCollector"
-              min="0" max="100"
-              value={range.MinimalCollector}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Collector</label>
-
-          <label style={{textAlign:"left", display:"block"}}>Early Bird</label>
-            <input  
-              type="range"
-              name="EarlybirdNightowl"
-              min="0" max="100"
-              value={range.EarlybirdNightowl}
-              onChange={handleRangeChange}
-            />
-          <label style={{textAlign:"right", display:"block"}}>Night Owl</label>
-        </div>
-        <br /> 
 
         {/* Buttons */}
         <div 
@@ -290,7 +237,7 @@ const ProfileCreation = () => {
                 width: "103px",
                 height: "40px",
                 display: "inline-block",
-                fontSize: "20px"
+                fontSize: "18px"
               }}
             >Next
             </Button>

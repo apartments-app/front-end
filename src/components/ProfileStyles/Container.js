@@ -5,7 +5,7 @@ const Container = styled.div`
   margin-left: 32px; 
   margin-right: 32px;
   margin-bottom: 55px;
-  background="#FFFFFF"
+  background: #FFFFFF;
 `;
 
 export default Container; 
