@@ -162,7 +162,7 @@ const ProfileScreening = () => {
               textAlign: "right",
             }}
           >
-            <BackLink to="/Profile">Back</BackLink>
+            <BackLink to="/Qualities">Back</BackLink>
             <Link to="/ProfilePage">
               <Button
                 primary

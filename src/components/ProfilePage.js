@@ -36,6 +36,7 @@ const sampleProfile = {
   disablityAssistance: false,
 };
 
+
 const Section = styled.div`
   display: flex;
   align-items: center;
