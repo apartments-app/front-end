@@ -2,24 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// import Container from "./ProfileStyles/Container";
+import Container from "./ProfileStyles/Container";
 import HeaderText from "./ProfileStyles/HeaderText";
 import InfoText from "./ProfileStyles/InfoText";
 import ProfileLabel from "./ProfileStyles/ProfileLabel";
-// import InputStyle from "./ProfileStyles/InputStyle";
+import InputStyle from "./ProfileStyles/InputStyle";
 import Button from "./Button";
 import BackLink from "./ProfileStyles/BackLink";
 import BottomNav from "./BottomNav";
-
-const Container = styled.div`
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  margin-left: 32px;
-  margin-right: 32px;
-`;
 
 const Section = styled.div`
   display: flex;
@@ -45,26 +35,6 @@ const InputSelectStyle = styled.select`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #c4c4c4;
-`;
-
-const InputStyle = styled.input`
-  background: #ffffff;
-  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  border: 1px solid #f4f4f4;
-  height: 37px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  padding-left: 10px;
-  
-  line-height: 24px;
-  font-family: Cabin, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
   color: #c4c4c4;
 `;
 
@@ -201,7 +171,6 @@ const ProfileScreening = () => {
                   width: "103px",
                   height: "40px",
                   display: "inline-block",
-
                   marginBottom: "20px",
                 }}
               >
@@ -212,7 +181,9 @@ const ProfileScreening = () => {
         </form>
       </Section>
       <br />
-      <BottomNav />
+      <div style={{display: "block", width: "100%"}}>
+        <BottomNav />
+      </div>
     </Container>
   );
 };

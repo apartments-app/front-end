@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import Container from "./ProfileStyles/Container";
 import BottomNav from "./BottomNav";
 import Button from "./Button";
 import "./ProfileStyles/InputRangeMini.css";
@@ -34,16 +35,6 @@ const sampleProfile = {
   petFriendy: true,
   disablityAssistance: false,
 };
-
-const Container = styled.div`
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-  margin-left: 32px;
-  margin-right: 32px;
-`;
 
 const Section = styled.div`
   display: flex;
@@ -136,7 +127,7 @@ const SliderLabel = styled.label`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
+  line-height: -10px;
   color: #787878;
   flex-direction: row;
   margin-top: 5px;
@@ -270,7 +261,8 @@ const ProfilePage = () => {
       <Section style={{ 
         justifyContent: "center", 
         marginTop: "-30px", 
-        marginBottom: "20px"
+        marginBottom: "20px",
+        width: "100%"
       }}>
         <Button
           primary
@@ -285,7 +277,9 @@ const ProfilePage = () => {
           Send Message
         </Button>
       </Section>
-      <BottomNav />
+      <div style={{display: "block", width: "100%"}}>
+        <BottomNav />
+      </div>
     </Container>
   );
 };
