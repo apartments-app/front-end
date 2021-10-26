@@ -36,7 +36,6 @@ const sampleProfile = {
   disablityAssistance: false,
 };
 
-
 const Section = styled.div`
   display: flex;
   align-items: center;
@@ -259,12 +258,14 @@ const ProfilePage = () => {
         </SliderSection>
       </SliderSection>
 
-      <Section style={{ 
-        justifyContent: "center", 
-        marginTop: "-30px", 
-        marginBottom: "20px",
-        width: "100%"
-      }}>
+      <Section
+        style={{
+          justifyContent: "center",
+          marginTop: "-30px",
+          marginBottom: "20px",
+          width: "100%",
+        }}
+      >
         <Button
           primary
           style={{
@@ -278,7 +279,7 @@ const ProfilePage = () => {
           Send Message
         </Button>
       </Section>
-      <div style={{display: "block", width: "100%"}}>
+      <div style={{ display: "block", width: "100%" }}>
         <BottomNav />
       </div>
     </Container>

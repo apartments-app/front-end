@@ -11,8 +11,7 @@ import BackLink from "./ProfileStyles/BackLink";
 
 const Section = styled.div`
   display: flex;
-  align-items: center;
-  position: relative;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -22,12 +21,14 @@ const SliderSection = styled.div`
   width: 100%;
   position: relative;
   align-items: flex-start;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 `;
 
 const SliderInput = styled.input`
   padding-bottom: 0px;
   margin-bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const SliderLabelDiv = styled.div`
@@ -63,145 +64,144 @@ const ProfileQuallities = () => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit}>
+      <Section>
         {/* Qualities */}
-        <HeaderText>
-          Qualities
-          <InfoText
-            style={{
-              display: "block",
-              marginTop: "14px",
-              marginBottom: "70px",
-            }}
-          >
-            Drag the slider to indicate how much you identify between these
-            pairs of adjectives. This is just to give a brief overview of how
-            you would prefer to live in a unit.
-          </InfoText>
-        </HeaderText>
-
-        {/* Qualities Slide Selectors */}
-        <SliderSection>
-          <SliderInput
-            type="range"
-            name="tidyComfy"
-            min="0"
-            max="100"
-            defaultValue="25"
-            value={range.tidyComfy}
-            onChange={handleRangeChange}
-          />
-          <SliderLabelDiv>
-            <SliderLabel>Tidy</SliderLabel>
-            <SliderLabel>Comfy</SliderLabel>
-          </SliderLabelDiv>
-        </SliderSection>
-
-        <SliderSection>
-          <SliderInput
-            type="range"
-            name="zenRowdy"
-            min="0"
-            max="100"
-            defaultValue="25"
-            value={range.zenRowdy}
-            onChange={handleRangeChange}
-          />
-          <SliderLabelDiv>
-            <SliderLabel>Zen</SliderLabel>
-            <SliderLabel>Rowdy</SliderLabel>
-          </SliderLabelDiv>
-        </SliderSection>
-
-        <SliderSection>
-          <SliderInput
-            type="range"
-            name="privateSocial"
-            min="0"
-            max="100"
-            defaultValue="25"
-            value={range.privateSocial}
-            onChange={handleRangeChange}
-          />
-          <SliderLabelDiv>
-            <SliderLabel>Private</SliderLabel>
-            <SliderLabel>Social</SliderLabel>
-          </SliderLabelDiv>
-        </SliderSection>
-
-        <SliderSection>
-          <SliderInput
-            type="range"
-            name="homebodyOutgoing"
-            min="0"
-            max="100"
-            defaultValue="25"
-            value={range.homebodyOutgoing}
-            onChange={handleRangeChange}
-          />
-          <SliderLabelDiv>
-            <SliderLabel>Homebody</SliderLabel>
-            <SliderLabel>Outgoing</SliderLabel>
-          </SliderLabelDiv>
-        </SliderSection>
-
-        <SliderSection>
-          <SliderInput
-            type="range"
-            name="minimalCollector"
-            min="0"
-            max="100"
-            defaultValue="25"
-            value={range.minimalCollector}
-            onChange={handleRangeChange}
-          />
-          <SliderLabelDiv>
-            <SliderLabel>Minimal</SliderLabel>
-            <SliderLabel>Collector</SliderLabel>
-          </SliderLabelDiv>
-        </SliderSection>
-
-        <SliderSection>
-          <SliderInput
-            type="range"
-            name="earlybirdNightowl"
-            min="0"
-            max="100"
-            defaultValue="25"
-            value={range.earlybirdNightowl}
-            onChange={handleRangeChange}
-          />
-          <SliderLabelDiv>
-            <SliderLabel>Early Bird</SliderLabel>
-            <SliderLabel>Night Owl</SliderLabel>
-          </SliderLabelDiv>
-        </SliderSection>
-
-        {/* Buttons */}
-        <div
+        <HeaderText>Qualities</HeaderText>
+        <InfoText
           style={{
-            display: "block",
-            width: "100%",
-            textAlign: "right",
+            marginTop: "5px",
+            marginBottom: "70px",
           }}
         >
-          <BackLink to="/Profile">Back</BackLink>
-          <Link to="/Screening">
-            <Button
-              primary
-              style={{
-                fontSize: "18px",
-                width: "103px",
-                height: "40px",
-                display: "inline-block",
-                marginBottom: "20px",
-              }}
-            >
-              Next
-            </Button>
-          </Link>
-        </div>
-      </form>
+          Drag the slider to indicate how much you identify between these pairs
+          of adjectives. This is just to give a brief overview of how you would
+          prefer to live in a unit.
+        </InfoText>
+
+        {/* Qualities Slide Selectors */}
+        <form onSubmit={handleSubmit}>
+          <SliderSection>
+            <SliderInput
+              type="range"
+              name="tidyComfy"
+              min="0"
+              max="100"
+              defaultValue="25"
+              value={range.tidyComfy}
+              onChange={handleRangeChange}
+            />
+            <SliderLabelDiv>
+              <SliderLabel>Tidy</SliderLabel>
+              <SliderLabel>Comfy</SliderLabel>
+            </SliderLabelDiv>
+          </SliderSection>
+
+          <SliderSection>
+            <SliderInput
+              type="range"
+              name="zenRowdy"
+              min="0"
+              max="100"
+              defaultValue="25"
+              value={range.zenRowdy}
+              onChange={handleRangeChange}
+            />
+            <SliderLabelDiv>
+              <SliderLabel>Zen</SliderLabel>
+              <SliderLabel>Rowdy</SliderLabel>
+            </SliderLabelDiv>
+          </SliderSection>
+
+          <SliderSection>
+            <SliderInput
+              type="range"
+              name="privateSocial"
+              min="0"
+              max="100"
+              defaultValue="25"
+              value={range.privateSocial}
+              onChange={handleRangeChange}
+            />
+            <SliderLabelDiv>
+              <SliderLabel>Private</SliderLabel>
+              <SliderLabel>Social</SliderLabel>
+            </SliderLabelDiv>
+          </SliderSection>
+
+          <SliderSection>
+            <SliderInput
+              type="range"
+              name="homebodyOutgoing"
+              min="0"
+              max="100"
+              defaultValue="25"
+              value={range.homebodyOutgoing}
+              onChange={handleRangeChange}
+            />
+            <SliderLabelDiv>
+              <SliderLabel>Homebody</SliderLabel>
+              <SliderLabel>Outgoing</SliderLabel>
+            </SliderLabelDiv>
+          </SliderSection>
+
+          <SliderSection>
+            <SliderInput
+              type="range"
+              name="minimalCollector"
+              min="0"
+              max="100"
+              defaultValue="25"
+              value={range.minimalCollector}
+              onChange={handleRangeChange}
+            />
+            <SliderLabelDiv>
+              <SliderLabel>Minimal</SliderLabel>
+              <SliderLabel>Collector</SliderLabel>
+            </SliderLabelDiv>
+          </SliderSection>
+
+          <SliderSection style={{marginBottom: "15px"}}>
+            <SliderInput
+              type="range"
+              name="earlybirdNightowl"
+              min="0"
+              max="100"
+              defaultValue="25"
+              value={range.earlybirdNightowl}
+              onChange={handleRangeChange}
+            />
+            <SliderLabelDiv>
+              <SliderLabel>Early Bird</SliderLabel>
+              <SliderLabel>Night Owl</SliderLabel>
+            </SliderLabelDiv>
+          </SliderSection>
+
+          {/* Buttons */}
+          <div
+            style={{
+              display: "block",
+              width: "100%",
+              textAlign: "right",
+              marginBottom: "14px",
+            }}
+          >
+            <BackLink to="/Profile">Back</BackLink>
+            <Link to="/Screening">
+              <Button
+                primary
+                style={{
+                  fontSize: "18px",
+                  width: "103px",
+                  height: "40px",
+                  marginBottom: "30px"
+                }}
+              >
+                Next
+              </Button>
+            </Link>
+          </div>
+        </form>
+      </Section>
       <div style={{ display: "block", width: "100%" }}>
         <BottomNav />
       </div>
