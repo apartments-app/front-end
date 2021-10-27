@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import Wrapper from "./Wrapper";
+
 
 const Container = styled.div`
   width: 100%;
@@ -19,11 +22,24 @@ const Container = styled.div`
 `;
 
 const RentalLanding = (props) => {
+
+
   return (
-    <Container>
-      <Button inverse>Renter</Button>
+    <Wrapper background="background: linear-gradient(
+      180deg,
+      #cd77db 0%,
+      #a1d8ff 54.53%,
+      #ffffff 88.31%,
+      #ffffff 100%
+    )">
+      <Link to="/Signup2">
+        <Button inverse>Renter</Button>
+      </Link>
       <Button inverse>Landlord</Button>
-    </Container>
+    </Wrapper>
+    // <Container>
+
+    // </Container>
   );
 };
 export default RentalLanding;

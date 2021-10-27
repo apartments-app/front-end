@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import axios, { Axios } from "axios";
 
 import Container from "./ProfileStyles/Container";
 import HeaderText from "./ProfileStyles/HeaderText";
@@ -125,7 +126,39 @@ const InputBio = styled.textarea`
   color: #787878;
 `;
 
+// the form we will submit, just not filled out yet
+const blankForm = {
+  "email": '',
+  "password": '',
+  "role": 0,
+  "first_name": '',
+  "last_name": '',
+  "birthday": '',
+  "phone": '',
+  "bio": ''
+}
+
 const ProfileCreation = () => {
+
+  // manage state for the form we will submit
+  const [signupForm, setSignupForm] = useState(blankForm);
+
+  // onclick handler, once 'register' is clicked, we will send the form to the backend
+  const register = (newUser) => {
+    Axios.post("https://apartmates-be.herokuapp.com/api/auth/register", newUser)
+      .then((response => {
+        console.log(response)
+      }))
+      .catch((error) => {
+        console.log("error" + error)
+      })
+      .finally(() => {
+        setSignupForm(blankForm)
+        console.log("success")
+        // use usehistory or something to take us to the home page?
+      })
+  }
+
   const [inputs, setInputs] = useState({});
   const [bday, setBday] = useState({
     birthday: "",
@@ -252,19 +285,17 @@ const ProfileCreation = () => {
             }}
           >
             <BackLink to="/">Back</BackLink>
-            <Link to="/Qualities">
-              <Button
-                primary
-                style={{
-                  width: "103px",
-                  height: "40px",
-                  display: "inline-block",
-                  fontSize: "18px",
-                }}
-              >
-                Next
-              </Button>
-            </Link>
+            <Button onClick = {register}
+              primary
+              style={{
+                width: "103px",
+                height: "40px",
+                display: "inline-block",
+                fontSize: "18px",
+              }}
+            >
+              Register
+            </Button>
           </div>
         </form>
       </Section>
