@@ -220,21 +220,21 @@ const ProfileCreation = () => {
               type="text"
               name="birthday"
               value={signupForm.birthday}
-              onChange={handleBirthdayChange}
+              onChange={handleInputChange}
               placeholder="Day"
             />
             <InputMonth
               type="text"
               name="birthmonth"
               value={signupForm.birthmonth}
-              onChange={handleBirthdayChange}
+              onChange={handleInputChange}
               placeholder="Month"
             />
             <InputYear
               type="text"
               name="birthyear"
               value={signupForm.birthyear}
-              onChange={handleBirthdayChange}
+              onChange={handleInputChange}
               placeholder="Year"
             />
           </InputSection>
@@ -271,7 +271,7 @@ const ProfileCreation = () => {
             <InputBio
               name="bio"
               value={signupForm.bio}
-              onChange={handleTextChange}
+              onChange={handleInputChange}
               placeholder="Type answer here separated by commas"
             />
           </ProfileLabel>
