@@ -207,8 +207,8 @@ const ProfileCreation = () => {
             Full Name
             <InputStyle
               type="text"
-              name="fullname"
-              value={inputs.fullname}
+              name="first_name"
+              value={signupForm.first_name}
               onChange={handleInputChange}
               placeholder="Type answer here"
             />
@@ -219,21 +219,21 @@ const ProfileCreation = () => {
             <InputDate
               type="text"
               name="birthday"
-              value={bday.birthday}
+              value={signupForm.birthday}
               onChange={handleBirthdayChange}
               placeholder="Day"
             />
             <InputMonth
               type="text"
               name="birthmonth"
-              value={bday.birthmonth}
+              value={signupForm.birthmonth}
               onChange={handleBirthdayChange}
               placeholder="Month"
             />
             <InputYear
               type="text"
               name="birthyear"
-              value={bday.birthyear}
+              value={signupForm.birthyear}
               onChange={handleBirthdayChange}
               placeholder="Year"
             />
@@ -242,9 +242,9 @@ const ProfileCreation = () => {
           <ProfileLabel>
             Phone Number
             <InputStyle
-              type="number"
-              name="phonenumber"
-              value={inputs.phonenumber}
+              type="text"
+              name="phone"
+              value={signupForm.phone}
               onChange={handleInputChange}
               placeholder="Type answer here"
             />
@@ -253,9 +253,9 @@ const ProfileCreation = () => {
           <ProfileLabel>
             Email
             <InputStyle
-              type="email"
+              type="text"
               name="email"
-              value={inputs.email}
+              value={signupForm.email}
               onChange={handleInputChange}
               placeholder="Type answer here"
             />
@@ -269,8 +269,8 @@ const ProfileCreation = () => {
           <ProfileLabel style={{ marginTop: "4px" }}>
             Biography
             <InputBio
-              name="biography"
-              value={textarea}
+              name="bio"
+              value={signupForm.bio}
               onChange={handleTextChange}
               placeholder="Type answer here separated by commas"
             />
