@@ -158,35 +158,16 @@ const ProfileCreation = () => {
         // use usehistory or something to take us to the home page?
       })
   }
-
-  const [inputs, setInputs] = useState({});
-  const [bday, setBday] = useState({
-    birthday: "",
-    birthmonth: "",
-    birthyear: "",
-  });
-
-  const [textarea, setTextArea] = useState("");
   
   const handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setSignupForm((values) => ({ ...values, [name]: value }));
   };
-
-  const handleBirthdayChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setBday((values) => ({ ...values, [name]: value }));
-  };
-
-  const handleTextChange = (event) => {
-    setTextArea(event.target.value);
-  };
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputs);
+    console.log(signupForm);
   };
 
   return (
