@@ -182,7 +182,7 @@ const ProfileCreation = () => {
         </InfoText>
 
         {/* Form */}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={register}>
           {/* Personal Details */}
           <ProfileLabel>
             Full Name
@@ -268,6 +268,7 @@ const ProfileCreation = () => {
             <BackLink to="/">Back</BackLink>
             <Button onClick = {register}
               primary
+              type="submit"
               style={{
                 width: "103px",
                 height: "40px",
