@@ -158,35 +158,16 @@ const ProfileCreation = () => {
         // use usehistory or something to take us to the home page?
       })
   }
-
-  const [inputs, setInputs] = useState({});
-  const [bday, setBday] = useState({
-    birthday: "",
-    birthmonth: "",
-    birthyear: "",
-  });
-
-  const [textarea, setTextArea] = useState("");
   
   const handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-
-  const handleBirthdayChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setBday((values) => ({ ...values, [name]: value }));
-  };
-
-  const handleTextChange = (event) => {
-    setTextArea(event.target.value);
+    setSignupForm((values) => ({ ...values, [name]: value }));
   };
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputs);
+    console.log(signupForm);
   };
 
   return (
@@ -201,14 +182,14 @@ const ProfileCreation = () => {
         </InfoText>
 
         {/* Form */}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={register}>
           {/* Personal Details */}
           <ProfileLabel>
             Full Name
             <InputStyle
               type="text"
-              name="fullname"
-              value={inputs.fullname}
+              name="first_name"
+              value={signupForm.first_name}
               onChange={handleInputChange}
               placeholder="Type answer here"
             />
@@ -219,22 +200,22 @@ const ProfileCreation = () => {
             <InputDate
               type="text"
               name="birthday"
-              value={bday.birthday}
-              onChange={handleBirthdayChange}
+              value={signupForm.birthday}
+              onChange={handleInputChange}
               placeholder="Day"
             />
             <InputMonth
               type="text"
               name="birthmonth"
-              value={bday.birthmonth}
-              onChange={handleBirthdayChange}
+              value={signupForm.birthmonth}
+              onChange={handleInputChange}
               placeholder="Month"
             />
             <InputYear
               type="text"
               name="birthyear"
-              value={bday.birthyear}
-              onChange={handleBirthdayChange}
+              value={signupForm.birthyear}
+              onChange={handleInputChange}
               placeholder="Year"
             />
           </InputSection>
@@ -242,9 +223,9 @@ const ProfileCreation = () => {
           <ProfileLabel>
             Phone Number
             <InputStyle
-              type="number"
-              name="phonenumber"
-              value={inputs.phonenumber}
+              type="text"
+              name="phone"
+              value={signupForm.phone}
               onChange={handleInputChange}
               placeholder="Type answer here"
             />
@@ -253,9 +234,9 @@ const ProfileCreation = () => {
           <ProfileLabel>
             Email
             <InputStyle
-              type="email"
+              type="text"
               name="email"
-              value={inputs.email}
+              value={signupForm.email}
               onChange={handleInputChange}
               placeholder="Type answer here"
             />
@@ -269,9 +250,9 @@ const ProfileCreation = () => {
           <ProfileLabel style={{ marginTop: "4px" }}>
             Biography
             <InputBio
-              name="biography"
-              value={textarea}
-              onChange={handleTextChange}
+              name="bio"
+              value={signupForm.bio}
+              onChange={handleInputChange}
               placeholder="Type answer here separated by commas"
             />
           </ProfileLabel>
@@ -287,6 +268,7 @@ const ProfileCreation = () => {
             <BackLink to="/">Back</BackLink>
             <Button onClick = {register}
               primary
+              type="submit"
               style={{
                 width: "103px",
                 height: "40px",
